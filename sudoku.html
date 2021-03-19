@@ -1,0 +1,64 @@
+<html>
+
+<body>
+    <h1>
+        Sudoku
+    </h1>
+    <h2 id='dbtest'>
+
+    </h2>
+    <div id='field' style="left:5vw; width:60vmin; height:60vmin; border:3px solid black; position:absolute">
+
+    </div>
+    <div id='picker'
+        style="left:calc(5vw + 24vmin); top:65vmin; width:12vmin; height:16vmin; border:1px solid black; position:relative">
+
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+    <script src = 'sudoku.js'> </script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+       /* var firebaseConfig = {
+            apiKey: "AIzaSyBEJWPesUzDSYBE9Ff4m3M5gGmF29z9YZ8",
+            authDomain: "sudoku-89f73.firebaseapp.com",
+            databaseURL: "https://sudoku-89f73-default-rtdb.firebaseio.com",
+            projectId: "sudoku-89f73",
+            storageBucket: "sudoku-89f73.appspot.com",
+            messagingSenderId: "908889411042",
+            appId: "1:908889411042:web:cc4f5bb4091de926fc7dbb",
+            measurementId: "G-F36R195QSE"
+        };
+        // Initialize Firebase
+        
+        
+        
+
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var dbScores = document.getElementById('dbtest');
+        var dbRef = firebase.database().ref().child('highscores').child('0').child('highscore');
+
+        dbRef.on('value', snap => dbScores.innerText = snap.val());*/
+
+        let selected_x = -1;
+        let selected_y = -1;
+        let board_active = true
+        reset_field()
+        let board = generate_board()
+        
+        console.log(board);
+        fill_grid(board)
+    </script>
+
+
+</body>
+
+</html>
